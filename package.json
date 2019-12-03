@@ -9,7 +9,7 @@
     "lint": "npx eslint app.js",
     "start": "node app.js"
   },
-  "author": "",
+  "author": "lw753",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
