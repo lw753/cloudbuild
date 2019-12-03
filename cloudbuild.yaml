@@ -9,3 +9,15 @@ steps:
 - name: gcr.io/cloud-builders/docker
   entrypoint: docker
   args: ['push','gcr.io/$PROJECT_ID/hello']
+
+  # DEPLOY: deploy application to Cloud Run 
+- name: gcr.io/cloud-builders/gcloud
+  entrypoint: gcloud
+  args: 
+    [
+      "beta","run","deploy","hello",
+      "--image=gcr.io/$PROJECT_ID/hello",
+      "--platform=managed",
+      "--region=europe-west1",
+      "--allow-unauthenticated"
+    ]
